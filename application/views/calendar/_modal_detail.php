@@ -47,9 +47,9 @@
 							</div>
 						</div>
 						<div class="control-group">											
-							<label class="control-label" for="amount">Amount</label>
+							<label class="control-label" for="amount">Amount vc</label>
 							<div class="controls">
-								<input autocomplete="off" tabindex="2" class="span2 text-right" id="amount" name="amount" value="" type="text" maxlength="18">
+								<input autocomplete="off" tabindex="2" class="span2 text-right" id="amount" name="amount" value="" type="text" maxlength="15">
 							</div>
 						</div>
 						<div class="control-group">											
@@ -148,7 +148,7 @@
 				},
 				amount:{
 					required: true,
-					maxlength: 18
+					maxlength: 15
 				}
 			},
 			submitHandler: function(form) {

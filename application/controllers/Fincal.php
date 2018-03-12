@@ -23,24 +23,27 @@ class Fincal extends CI_Controller {
 		$income  = [];
 		$expend  = [];
 		
-		foreach($this->acc->get_all() as $a){			
-			$res = $this->tran->getIncomePerMonthByAccount($year, $a->id);
-			
-			$income[$a->name] = $default;	
-			if (! empty($res)) {
-				foreach($res as $r){
-					$income[$a->name][$r->mon] = $r->income;
-				}	
+		$acc 	 = $this->acc->get_all();
+		if($acc){
+			foreach($acc as $a){			
+				$res = $this->tran->getIncomePerMonthByAccount($year, $a->id);
+				
+				$income[$a->name] = $default;	
+				if (! empty($res)) {
+					foreach($res as $r){
+						$income[$a->name][$r->mon] = $r->income;
+					}	
+				}
+				
+				$res = $this->tran->getExpendPerMonthByAccount($year, $a->id);
+				
+				$expend[$a->name] = $default;	
+				if (! empty($res)) {
+					foreach($res as $r){
+						$expend[$a->name][$r->mon] = $r->expend;
+					}	
+				}			
 			}
-			
-			$res = $this->tran->getExpendPerMonthByAccount($year, $a->id);
-			
-			$expend[$a->name] = $default;	
-			if (! empty($res)) {
-				foreach($res as $r){
-					$expend[$a->name][$r->mon] = $r->expend;
-				}	
-			}			
 		}
 
 		$data = ['content' => 'dashboard/dashboard',
