@@ -19,10 +19,10 @@
 						</a>
 						
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo site_url('type')?>">Account Type</a></li>
-							<li><a href="<?php echo site_url('account')?>">Account</a></li>
-							<li><a href="<?php echo site_url('category')?>">Category</a></li>
-							<li><a href="<?php echo site_url('currency')?>">Currency</a></li>
+							<li><a href="<?php echo "#"; //site_url('type')?>">Account Type</a></li>
+							<li><a href="<?php echo "#"; //site_url('account')?>">Account</a></li>
+							<li><a href="<?php echo "#"; //site_url('category')?>">Category</a></li>
+							<li><a href="<?php echo "#"; //site_url('currency')?>">Currency</a></li>
 						</ul>						
 					</li>
 				</ul>
